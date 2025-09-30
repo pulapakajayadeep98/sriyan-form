@@ -1,0 +1,1305 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sriyan Group </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <style type="text/css">
+body{
+    color: #dfdfdfdd;
+    overflow-x: hidden;
+   
+}
+#tdLayout{
+ font-size: 14px;
+}
+/* Base style for desktop */
+
+
+
+       #formHeader {
+    text-align: center;
+    margin-bottom: 25px;
+}
+#companyLogo {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+#companyName {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4A00E0; /* purple accent */
+}
+
+/* Form Container */
+#dvWebform {
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+  
+        background: linear-gradient(135deg, #000428, #004e92);
+    border-radius: 12px;
+    padding: 25px;
+    border: 2px solid #ffffff; /* light purple border */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    overflow: visible;
+}
+
+/* Table styling */
+#dvWebform table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+#dvWebform td.tdLayout {
+    vertical-align: middle;
+    padding: 8px 10px;
+}
+
+/* Inputs & Selects */
+#dvWebform input, #dvWebform select, #dvWebform button {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+#dvWebform input:focus, #dvWebform select:focus {
+    outline: none;
+    border-color: #4A00E0;
+    box-shadow: 0 0 8px rgba(74,0,224,0.25);
+}
+
+/* Mobile number + country code */
+/* Container for mobile + country code */
+.mobileContainer {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start; /* align top of inputs */
+    position: relative; /* for absolute positioning of dropdown */
+}
+
+/* Country code wrapper */
+.countryCodeDropdown {
+    width: 25%; /* fixed width for country code */
+    position: relative;
+}
+
+/* Dropdown button */
+.countryCodeDropdown .btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Dropdown menu */
+.countryCodeDropdown .dropdown-menu {
+    position: absolute;
+    bottom: 100%; /* expand above the button */
+    left: 0;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    display: none; /* hide by default */
+    z-index: 3000;
+}
+
+/* Show dropdown on hover */
+.countryCodeDropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Mobile number input */
+.longInput {
+    width: 75%; /* take remaining space */
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+/* Submit Button */
+input.buttonStyle {
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(90deg, #CAA03E	, #CAA03E);
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+input.buttonStyle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(74,0,224,0.3);
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    #dvWebform { max-width: 100%; padding: 20px; }
+    .mobileContainer { flex-direction: column; }
+    .countryCodeDropdown, .longInput { width: 100%; }
+}
+
+
+/* Animations fallback */
+#dvWebform tr { animation: fadeIn 0.8s ease; }
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+/* Mobile Responsive Adjustments */
+/* WhatsApp-style Mobile Layout Adjustments */
+@media screen and (max-width: 768px) {
+    /* Keep container side-by-side on mobile too */
+    .mobileContainer {
+        flex-direction: row;         /* horizontal layout */
+        align-items: center;
+        gap: 8px;
+       
+    }
+
+    .countryCodeDropdown {
+        width: 30%; /* slightly wider for readability */
+    }
+
+    .longInput {
+        width: 70%;
+    }
+label {
+    display: inline-block;
+    font-size: 14PX;
+}
+
+    /* Reduce padding and spacing */
+    .countryCodeDropdown .btn,
+    .longInput {
+        font-size: 15px;
+        padding: 8px 10px;
+        line-height: 1.2;
+    }
+
+    /* Dropdown list for country codes */
+    .countryCodeDropdown .dropdown-menu {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+    /* Tighten up labels and spacing */
+    #dvWebform td.tdLayout:first-child {
+        margin-bottom: 4px;
+    }
+
+    #dvWebform td.tdLayout:nth-child(2) {
+        margin-bottom: 10px;
+    }
+
+    input, select {
+        line-height: 1.3;
+    }
+
+    /* Optional: Reduce spacing between rows */
+    #dvWebform table {
+        border-spacing: 0 10px;
+    }
+}
+#dvWebform input, #dvWebform select, #dvWebform button {
+    width: 100%;
+    padding: 7px 7px;
+}
+label {
+    display: inline-block;
+    font-size: 16PX;
+}
+/* Preloader full-screen */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #0A1E4C; /* Deep navy */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    animation: fadeOut 1s ease 3s forwards; /* Wait 3s, then fade */
+}
+
+/* Inner content */
+.loader-content {
+    text-align: center;
+    animation: slideUp 1s ease;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    animation: pulse 2s infinite;
+}
+
+.brand-text {
+    font-family: 'Georgia', serif;
+    color: #CAA03E;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.tagline {
+    color: #ffffff;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 400px) {
+    .brand-text {
+        font-size: 18px;
+    }
+
+    .tagline {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+}
+
+
+    </style>
+<script type="text/javascript">
+
+        $(document).ready(function() {
+            formUrlParamFlds();
+//            $('.dropdown-toggle').text($('.dropdown-menu').find('a').attr('dvalue'));
+
+            $('.dropdown-toggle').on('click', function()
+            {
+                $('.dropdown-menu').toggleClass('open');
+
+            });
+
+            $('.dropdown-menu li').on('click', function()
+            {
+
+                var dvElem = $(this).parent().parent();
+
+                dvElem.find('.dropdown-toggle').text( $(this).find('a').attr('dvalue') );
+                $('.dropdown-menu').removeClass('open');
+                $(dvElem).next().focus();
+            });
+        });
+
+        function formUrlParamFlds(){
+
+            const queryString = window.location.search;
+            var arrVal = ['utm_content','utm_term','utm_campaign','utm_channel','utm_medium','utm_source'];
+            var arrNames = ['sUtmContent','sUtmTerm','sUtmCampaign','iChannelId','iUtmMedium','iChannelId'];
+            var iLen = arrNames.length,sParam;
+
+            const urlParams = new URLSearchParams(queryString);
+
+            if(iLen>0) {
+                for (var i = 0; i < iLen; i++) {
+                    if (urlParams.get(arrVal[i]) != null)
+                        createHiddenflds(arrNames[i], urlParams.get(arrVal[i]));
+                }
+            }
+
+            function createHiddenflds(fldNmVal,fldVal){
+                var dvWebform = document.getElementById("dvWebform"),arrElems,elem=null;
+                arrElems = $('[value='+fldNmVal+']');
+                if(arrElems!=null && arrElems.length>0)
+                {
+                    var tr;
+                    elem = arrElems[0];
+                    tr = elem.parentNode.parentNode;
+                    elem = tr.cells[1].children[0];
+                    if(elem.tagName=='SELECT')
+                    {
+
+                        var iLen = elem.options.length,k,bSelect=false;
+                        if(iLen > 0)
+                        {
+                            for(k=0;k<iLen;k++)
+                            {
+                                var txt = (elem.options[k].innerText);
+
+                                if(txt.trim()==fldVal)
+                                {
+                                    bSelect=true;
+                                    elem.options[k].selected=true;
+                                    break;
+                                }
+                            }
+                        }
+                        if(bSelect==false)
+                        {
+                            var newOption = document.createElement('option'),optionText;
+                            optionText = document.createTextNode(fldVal);
+                            newOption.appendChild(optionText);
+                            newOption.setAttribute('value',fldVal);
+                            elem.appendChild(newOption);
+                            elem.options[elem.length-1].selected=true;
+                        }
+                    }
+                    else
+                        elem.setAttribute("value",fldVal);
+                }
+                if(elem==null)
+                {
+                    var txtFld = document.createElement("INPUT");
+                    txtFld.name = "FNames";
+                    txtFld.type = "hidden";
+                    txtFld.setAttribute("value",fldNmVal);
+                    dvWebform.appendChild(txtFld);
+
+                    txtFld = document.createElement("INPUT");
+                    txtFld.name = "FValues";
+                    txtFld.type = "hidden";
+                    txtFld.setAttribute("value",fldVal);
+                    dvWebform.appendChild(txtFld);
+                }
+
+            }
+        }
+
+        function onClkValidateLeadInfo()
+        {
+            var arrElements,tdLabel,bMandatory = true;
+            arrElements = document.forms["frmLeadInfo"].elements;
+            for (var i = 0;i <arrElements.length;i++)
+            {
+                switch (arrElements[i].type)
+                        {
+                    case 'text':
+                    case 'hidden':
+                    case 'password':
+                    case 'textarea':
+                    case 'date':
+                    case 'file':
+                        if(arrElements[i].getAttribute("mandatory") == 1)
+                        {
+                            if((arrElements[i].value).length == 0)
+                                bMandatory = false;
+                        }
+                        if(arrElements[i].getAttribute("controlType")!=null && arrElements[i].getAttribute("controlType") ==12)
+                        {
+                            var elem = $(arrElements[i]),dvElem,arrElem;
+                            dvElem = elem.parent();
+                            arrElem = $(dvElem).find('input');
+                            arrElem[1].value  = dvElem.find('.dropdown-toggle').text().trim()+""+arrElem[0].value;
+                        }
+                        break;
+                    case 'select-one':
+                        if(arrElements[i].getAttribute("mandatory") == 1)
+                        {
+                            if(arrElements[i].value <= 0)
+                                bMandatory = false;
+                        }
+                        break;
+                }
+                if(!bMandatory)
+                {
+                    tdLabel = arrElements[i].parentNode.previousSibling;
+                    while(tdLabel.nodeType != 1)
+                        tdLabel = tdLabel.previousSibling;
+                    alert((tdLabel.textContent).replace(/^\s+|\s+$/, '')+" is mandatory");
+                    //                                        alert((tdLabel.innerText).replace(/^\s+|\s+$/, '')+" is mandatory");
+                    arrElements[i].focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+        var TYPE_NUMERIC = 2;
+        var TYPE_FLOAT = 3;
+        var TYPE_DATE = 4;
+
+        //var TYPE_NUMERIC=2,TYPE_FLOAT=3,TYPE_DATE=4;
+
+        if(document.captureEvents)
+        {
+            if( Event.KEYUP )
+                document.captureEvents( Event.KEYUP);
+        }
+        /**
+         Allows values of type specified in parameter to be entered.
+         @param objTxt -- TextField object
+         @param iType -- Field type -- Default - 'string'
+         values: string=1,numeric=2,float=3,date=4
+         **/
+        function checkInput(objTxt,iType)
+        {
+            var evt,keycode;
+            if(window.event)
+                evt = window.event;
+            else
+                evt = window.Event;
+
+            keycode = evt.keyCode;
+
+            if (keycode != 9 && keycode != 16)
+            {  //9-tab,16-shift+tab
+                if (keycode != 37 && keycode != 39 && keycode != 8 && keycode != 46 && keycode != 36 && keycode != 35)
+                {               // left arrow,right arrow, backspace, delete , Home , End
+                    if (iType == TYPE_NUMERIC)//Numeric
+                    {
+                        objTxt.value = objTxt.value.replace(/([^\-0-9])/g, "");
+                        //objTxt.value = objTxt.value.replace(/([^/\d])/g,"");
+
+                        if (objTxt.value.lastIndexOf("-") > 0)
+                            objTxt.value = objTxt.value.substring(0, objTxt.value.lastIndexOf("-"));
+                    }
+                    else if (iType == TYPE_FLOAT)//Float
+                    {
+                        objTxt.value = objTxt.value.replace(/([^.\-0-9])/g, "");
+
+                        if (objTxt.value.lastIndexOf("-") > 0)
+                            objTxt.value = objTxt.value.substring(0, objTxt.value.lastIndexOf("-"));
+                        if (objTxt.value.indexOf(".") != objTxt.value.lastIndexOf("."))
+                            objTxt.value = objTxt.value.substring(0, objTxt.value.lastIndexOf("."));
+                    }
+                    else if (iType == TYPE_DATE)//date
+                        {
+                            //checkDateFormat(objTxt);
+                        }
+                }
+            }
+
+        }
+        /**
+         Checks for date format
+         @param objTxt -- TextField Object
+         **/
+        function checkDateFormat(objTxt)
+        {
+            return; // not checking for date.
+            for(var i=0;i < objTxt.value.length;i++)
+            {
+                if(i==2 || i==5)
+                {
+                    if(objTxt.value.charAt(i)!="/")
+                        objTxt.value = objTxt.value.substring(0,i);
+                }
+                else if((objTxt.value.lastIndexOf("/"))!=(objTxt.value.indexOf("/")) &&(objTxt.value.lastIndexOf("/")!=-1))
+                {
+                    if((objTxt.value.lastIndexOf("/") - objTxt.value.indexOf("/") )!=3 )
+                        objTxt.value = objTxt.value.substring(0,objTxt.value.lastIndexOf("/"))
+                }
+                else if(objTxt.value.indexOf("/") != -1)
+                    {
+                        if(objTxt.value.indexOf("/") < 2)
+                            objTxt.value = objTxt.value.replace(/([^0-9])/g,"");
+                    }
+                if(objTxt.value.charAt(3)=="/"|| objTxt.value.charAt(4)=="/")
+                {
+                    objTxt.value = objTxt.value.substring(0,objTxt.value.indexOf("/")+1);
+                }
+                objTxt.value = objTxt.value.replace(/([^\/0-9])/g,"");
+
+                //objTxt.value = objTxt.value.replace(/^(\d{3}\/d{2}\/d{4})$/);
+            }
+        }
+        function uploadFile(fileInput,sId,sUrl,iFieldId)
+        {
+            var sValue = fileInput.value;
+            sValue = sValue.substring(sValue.lastIndexOf("\\")+1);
+
+            var elem = fileInput.nextSibling;
+            while (elem && elem.nodeType != 1)// 1=Element_Node
+            {
+                elem = elem.nextSibling;
+            }
+
+            var objFile = fileInput.files[0],objRegExp=/^(image\/bmp|image\/gif|image\/jpeg|image\/png|image\/tiff)$/i; // filter for image files;
+            if(!objRegExp.test(objFile.type) &&  fileInput.getAttribute("accept")!=null)
+            {
+                fileInput.value = "";
+                alert("Invalid image file");
+                return false;
+            }
+            else {
+                elem.value = sValue;
+                sUrl = sUrl + "?JSESSIONID=" + sId + "&uploadFileName=" + sValue+"&uploadFieldId="+iFieldId;
+
+                var vFD = new FormData();
+                vFD.append('upload', objFile);
+                var oXHR = new XMLHttpRequest();
+                //            oXHR.upload.addEventListener('progress', null, false);
+                //            oXHR.addEventListener('load', uploadFinish, false);
+                //            oXHR.addEventListener('error', uploadError, false);
+                //            oXHR.addEventListener('abort', uploadAbort, false);
+
+                oXHR.open('POST', sUrl);
+                oXHR.send(vFD);
+            }
+
+        }
+        function onClkCheckboxes(objchk)
+        {
+            objchk.parentNode.parentNode.children[1].value = objchk.checked?1:0;
+        }
+
+
+
+        
+    </script>
+    <script>
+  document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', function () {
+      const newVal = this.getAttribute('data-value');
+      document.getElementById('ddbutton2').textContent = newVal;
+    });
+  });
+</script>
+<script>
+    window.addEventListener("load", function () {
+        // Delay showing main content
+        setTimeout(function () {
+            document.getElementById("preloader").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+        }, 3500); // Matches the fadeOut animation time (3s + 0.5s buffer)
+    });
+</script>
+
+</head>
+<body>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<div id="preloader">
+    <div class="loader-content">
+        <img src="images/sryanlogo.png" alt="Sriyan Group Logo" class="logo">
+        <h2 class="brand-text">SRIYAN GROUP</h2>
+        <p class="tagline">A step for your bright future</p>
+    </div>
+</div>
+
+
+<form name="frmLeadInfo" id="frmLeadInfo" onsubmit="return onClkValidateLeadInfo();" action="http://sriyangroup.centrahubcrm.com/in/streamline/module/webForm!saveWebForm.do" method="post">
+    <input type="hidden" name="requestedSession" id="requestedSession" value="BC24B809885B944CBA4F2793BCC6E60F" class="alignLeft null">
+    <div style="display:none" id="msgrequestedSession"></div>
+    <input type="hidden" name="templateId" id="templateId" value="3" class="alignLeft null">
+    <div style="display:none" id="msgtemplateId"></div>
+    <input type="hidden" name="companyCode" id="hfCompanyCode" value="02P60" class="alignLeft null">
+    <div style="display:none" id="msghfCompanyCode"></div>
+
+    <!-- Centered Header -->
+  
+
+    <div id="dvWebform">
+        <table align="center" cellpadding="2" cellspacing="0">
+            <tbody>
+                  <div id="formHeader" data-aos="fade-down">
+       <img src="images/sryanlogo.png" alt="Company Logo" id="companyLogo">
+
+        <h2 style="
+h2 {
+    font-size: 16px; /* desktop */
+}
+
+
+@media screen and (max-width: 600px) {
+    h2 {
+
+        font-size: 14px; /* mobile */
+    }
+}
+">Welcome to Sriyan Group Promotional Offer</h2>
+   
+    </div>
+                <!-- Full Name -->
+                <tr data-aos="fade-right">
+                    <td class="tdLayout">
+                        <label>Full Name</label>
+                        <input type="hidden" name="FNames" value="sName" class="alignLeft null">
+                    </td>
+                    <td class="tdLayout">
+                        <input type="text" name="FValues" class="alignLeft" placeholder="Enter full name" required>
+                    </td>
+                </tr>
+
+                <!-- Whatsapp Mobile -->
+                <tr data-aos="fade-left">
+                    <td class="tdLayout">
+                        <label>Whatsapp Mobile</label>
+                        <input type="hidden" name="FNames" value="sPhone" class="alignLeft null">
+                    </td>
+                    <td class="tdLayout mobileContainer">
+                        <div class="countryCodeDropdown">
+                           <button class="btn dropdown-toggle" type="button" id="ddbutton2" data-bs-toggle="dropdown">+91</button>
+
+                            <ul class="dropdown-menu" aria-labelledby="ddbutton2">
+                                <li><a class="dropdown-item" href="#" dvalue="+93">Afghanistan(+93)</a></li>
+                                <li><a class="dropdown-item" href="#" dvalue="+355">Albania(+355)</a></li>
+                                <li><a class="dropdown-item" href="#" dvalue="+213">Algeria(+213)</a></li>
+                                <li><a class="dropdown-item" href="#" dvalue="+1684">American Samoa(+1684)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+376">Andorra(+376)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+244">Angola(+244)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1264">Anguilla(+1264)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1268">Antigua and Barbuda(+1268)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+54">Argentina(+54)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+374">Armenia(+374)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+297">Aruba(+297)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+61">Australia(+61)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+43">Austria(+43)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+994">Azerbaijan(+994)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1242">Bahamas(+1242)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+973">Bahrain(+973)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+880">Bangladesh(+880)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+375">Belarus(+375)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+32">Belgium(+32)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+501">Belize(+501)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+229">Benin(+229)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1441">Bermuda(+1441)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+975">Bhutan(+975)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+975">Bhutan(+975)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+591">Bolivia(+591)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+387">Bosnia and Herzegovina(+387)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+267">Botswana(+267)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+55">Brazil(+55)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+673">Brunei(+673)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+673">Brunei(+673)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+359">Bulgaria(+359)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+226">Burkina Faso(+226)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+257">Burundi(+257)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+855">Cambodia(+855)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+237">Cameroon(+237)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1">Canada(+1)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+238">Cape Verde(+238)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1345">Cayman Islands(+1345)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+236">Central African Republic(+236)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+235">Chad(+235)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+56">Chile(+56)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+86">China(+86)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+61">Christmas Island(+61)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+61">Cocos (Keeling) Islands(+61)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+57">Colombia(+57)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+269">Comoros(+269)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+242">Congo/Brazzaville(+242)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+682">Cook Islands(+682)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+225">Cote dIvoire(+225)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+385">Croatia(+385)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+53">Cuba(+53)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+53">Cuba(+53)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+357">Cyprus(+357)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+420">Czech Republic(+420)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+45">Denmark(+45)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+253">Djibouti(+253)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1767">Dominica(+1767)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1809">Dominican Republic(+1809)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+593">Ecuador(+593)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+20">Egypt(+20)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+503">El Salvador(+503)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+240">Equatorial Guinea(+240)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+291">Eritrea(+291)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+372">Estonia(+372)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+500">Falkland Islands(+500)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+298">Faroe Islands(+298)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+679">Fiji(+679)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+358">Finland(+358)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+33">France(+33)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+594">French Guiana(+594)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+689">French Polynesia(+689)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+241">Gabon(+241)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+220">Gambia(+220)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+995">Georgia(+995)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+49">Germany(+49)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+233">Ghana(+233)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+350">Gibraltar(+350)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+30">Greece(+30)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+299">Greenland(+299)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1473">Grenada(+1473)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+590">Guadeloupe(+590)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1671">Guam(+1671)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+502">Guatemala(+502)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+224">Guinea(+224)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+245">Guinea-Bissau(+245)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+592">Guyana(+592)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+509">Haiti(+509)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+39">Holy See (Vatican City)(+39)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+504">Honduras(+504)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+852">Hong Kong(+852)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+36">Hungary(+36)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+91">India(+91)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+62">Indonesia(+62)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+98">Iran(+98)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+964">Iraq(+964)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+353">Ireland(+353)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+353">Ireland(+353)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+972">Israel(+972)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+39">Italy(+39)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1876">Jamaica(+1876)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+81">Japan(+81)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+962">Jordan(+962)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+7">Kazakhstan(+7)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+254">Kenya(+254)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+686">Kiribati(+686)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+965">Kuwait(+965)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+996">Kyrgyzstan(+996)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+856">Laos(+856)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+371">Latvia(+371)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+961">Lebanon(+961)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+266">Lesotho(+266)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+231">Liberia(+231)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+218">Libya(+218)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+423">Liechtenstein(+423)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+370">Lithuania(+370)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+352">Luxembourg(+352)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+853">Macau(+853)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+261">Madagascar(+261)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+265">Malawi(+265)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+60">Malaysia(+60)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+960">Maldives(+960)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+223">Mali(+223)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+356">Malta(+356)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+692">Marshall Islands(+692)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+596">Martinique(+596)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+222">Mauritania(+222)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+230">Mauritius(+230)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+262">Mayotte(+262)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+52">Mexico(+52)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+691">Micronesia(+691)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+373">Moldova(+373)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+377">Monaco(+377)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+976">Mongolia(+976)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+382">Montenegro(+382)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1664">Montserrat(+1664)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+212">Morocco(+212)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+258">Mozambique(+258)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+95">Myanmar (Burma)(+95)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+264">Namibia(+264)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+674">Nauru(+674)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+977">Nepal(+977)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+599">Netherlands(+599)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+31">Netherlands Antilles(+31)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+687">New Caledonia(+687)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+64">New Zealand(+64)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+505">Nicaragua(+505)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+227">Niger(+227)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+234">Nigeria(+234)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+683">Niue(+683)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+672">Norfolk Island(+672)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+850">North Korea(+850)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1670">Northern Mariana Islands(+1670)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+47">Norway(+47)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+968">Oman(+968)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+92">Pakistan(+92)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+680">Palau(+680)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+507">Panama(+507)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+675">Papua New Guinea(+675)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+595">Paraguay(+595)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+51">Peru(+51)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+63">Philippines(+63)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+870">Pitcairn Islands(+870)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+48">Poland(+48)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+351">Portugal(+351)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1787">Puerto Rico(+1787)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+974">Qatar(+974)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+389">Republic of Macedonia(+389)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+262">Réunion(+262)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+7">Russia(+7)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+250">Rwanda(+250)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1869">Saint Kitts and Nevis(+1869)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1758">Saint Lucia(+1758)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1784">Saint Vincent and The Grenadines(+1784)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+685">Samoa(+685)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+378">San Marino(+378)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+239">São Tome and Principe(+239)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+966">Saudi Arabia(+966)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+44">Scotland (United Kingdom)(+44)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+221">Senegal(+221)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+381">Serbia(+381)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+248">Seychelles(+248)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+232">Sierra Leone(+232)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+65">Singapore(+65)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+421">Slovakia(+421)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+386">Slovenia(+386)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+677">Solomon Islands(+677)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+252">Somalia(+252)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+27">South Africa(+27)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+82">South Korea(+82)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+34">Spain(+34)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+94">Sri Lanka(+94)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+249">Sudan(+249)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+597">Suriname(+597)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+47">Svalbard and Jan Mayen(+47)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+268">Swaziland(+268)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+46">Sweden(+46)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+41">Switzerland(+41)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+963">Syria(+963)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+886">Taiwan(+886)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+992">Tajikistan(+992)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+255">Tanzania(+255)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+66">Thailand(+66)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+228">Togo(+228)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+690">Tokelau(+690)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+676">Tonga(+676)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1868">Trinidad and Tobago(+1868)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+216">Tunisia(+216)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+90">Turkey(+90)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+993">Turkmenistan(+993)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1649">Turks and Caicos Islands(+1649)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+688">Tuvalu(+688)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+256">Uganda(+256)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+380">Ukraine(+380)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+971">United Arab Emirates(+971)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+44">United Kingdom(+44)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1">United States of America(+1)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+598">Uruguay(+598)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+998">Uzbekistan(+998)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+678">Vanuatu(+678)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+58">Venezuela(+58)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+84">Vietnam(+84)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+1340">Virgin Islands(+1340)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+681">Wallis and Futuna Islands(+681)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+212">Western Sahara(+212)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+967">Yemen(+967)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+260">Zambia(+260)</a></li>
+                                                        <li><a class="dropdown-item" href="#" dvalue="+263">Zimbabwe(+263)</a></li>
+
+
+                                <!-- Add more countries as needed -->
+                            </ul>
+                        </div>
+                        <input type="text" spellcheck="true" autocorrect="on" onkeyup="checkInput(this,2,true,event);" class="alignLeft longInput" placeholder="Enter mobile number" required>
+                        <input type="hidden" name="FValues" class="alignLeft null">
+                    </td>
+                </tr>
+
+                <!-- Email -->
+                <tr data-aos="fade-right">
+                    <td class="tdLayout">
+                        <label>Email</label>
+                        <input type="hidden" name="FNames" value="sEmail" class="alignLeft null">
+                    </td>
+                    <td class="tdLayout">
+                        <input type="text" name="FValues" class="alignLeft" placeholder="Enter email">
+                    </td>
+                </tr>
+
+                <!-- City -->
+                <tr data-aos="fade-left">
+                    <td class="tdLayout">
+                        <label>City</label>
+                        <input type="hidden" name="FNames" value="sBillingCity" class="alignLeft null">
+                    </td>
+                    <td class="tdLayout">
+                        <input type="text" name="FValues" class="alignLeft" placeholder="Enter city"required>
+                    </td>
+                </tr>
+
+                <!-- Agent Name -->
+          <tr data-aos="fade-right">
+  <td class="tdLayout">
+    <label>Agent Name</label>
+    <input type="hidden" name="FNames" value="AgentName" class="alignLeft null" required>
+  </td>
+  <td class="tdLayout">
+    <select name="FValues" required>
+      <option value="" disabled selected>Select Agent</option>
+                            <option value="2">A</option>
+                            <option value="3">B</option>
+                            <!-- Add A-Z as needed -->
+                             
+
+                                                         <option value="4">
+                                                    C</option>
+                                                <option value="5">
+                                                    D</option>
+                                                <option value="6">
+                                                    E</option>
+                                                <option value="7">
+                                                    F</option>
+                                                <option value="8">
+                                                    G</option>
+                                                <option value="9">
+                                                    H</option>
+                                                <option value="10">
+                                                    I</option>
+                                                <option value="11">
+                                                    J</option>
+                                                <option value="12">
+                                                    K</option>
+                                                <option value="13">
+                                                    L</option>
+                                                <option value="14">
+                                                    M</option>
+                                                <option value="15">
+                                                    N</option>
+                                                <option value="16">
+                                                    O</option>
+                                                <option value="17">
+                                                    P</option>
+                                                <option value="18">
+                                                    Q</option>
+                                                <option value="19">
+                                                    R</option>
+                                                <option value="20">
+                                                    S</option>
+                                                <option value="21">
+                                                    T</option>
+                                                <option value="22">
+                                                    U</option>
+                                                <option value="23">
+                                                    V</option>
+                                                <option value="24">
+                                                    W</option>
+                                                <option value="25">
+                                                    X</option>
+                                                <option value="26">
+                                                    Y</option>
+                                                <option value="27">
+                                                    Z</option>
+
+
+</ul>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- No Of Coupons -->
+               <tr data-aos="fade-left"  id="noOfCouponsRow">
+  <td class="tdLayout">
+    <label>No Of Coupons</label>
+    <input type="hidden" name="FNames" value="NoofCoupons" class="alignLeft null">
+  </td>
+  <td class="tdLayout">
+    <input type="number" id="noOfCoupons" name="FValues" class="alignLeft" placeholder="Enter number of coupons" min="1" max="99"required>
+  </td>
+</tr>
+
+                <!-- Occupation -->
+                <tr data-aos="fade-right">
+                    <td class="tdLayout">
+                        <label>Occupation</label>
+                        <input type="hidden" name="FNames" value="Occupations" class="alignLeft null">
+                    </td>
+                    <td class="tdLayout">
+                        <select name="FValues">
+                            <option value="-1"></option>
+                            <option value="0" selected></option>
+                            <option value="1">Doctor</option>
+                            <option value="2">Nurse</option>
+                                                                                 <option value="3">
+                                                    Surgeon</option>
+                                                <option value="4">
+                                                    Pharmacist</option>
+                                                <option value="5">
+                                                    Dentist</option>
+                                                <option value="6">
+                                                    Paramedic</option>
+                                                <option value="7">
+                                                    Radiologist</option>
+                                                <option value="8">
+                                                    Physiotherapist</option>
+                                                <option value="9">
+                                                    Psychologist</option>
+                                                <option value="10">
+                                                    Veterinarian</option>
+                                                <option value="11">
+                                                    Teacher</option>
+                                                <option value="12">
+                                                    Professor</option>
+                                                <option value="13">
+                                                    Tutor</option>
+                                                <option value="14">
+                                                    School Administrator</option>
+                                                <option value="15">
+                                                    Librarian</option>
+                                                <option value="16">
+                                                    Curriculum Developer</option>
+                                                <option value="17">
+                                                    Education Counselor</option>
+                                                <option value="18">
+                                                    Researcher</option>
+                                                <option value="19">
+                                                    Training Specialist</option>
+                                                <option value="20">
+                                                    Principal</option>
+                                                <option value="21">
+                                                    Accountant</option>
+                                                <option value="22">
+                                                    Auditor</option>
+                                                <option value="23">
+                                                    Financial Analyst</option>
+                                                <option value="24">
+                                                    Business Manager</option>
+                                                <option value="25">
+                                                    Entrepreneur</option>
+                                                <option value="26">
+                                                    Project Manager</option>
+                                                <option value="27">
+                                                    Marketing Specialist</option>
+                                                <option value="28">
+                                                    Customer Service Rep</option>
+                                                <option value="29">
+                                                    Human Resources Manager</option>
+                                                <option value="30">
+                                                    Banker</option>
+                                                <option value="31">
+                                                    Software Developer</option>
+                                                <option value="32">
+                                                    Data Scientist</option>
+                                                <option value="33">
+                                                    IT Specialist</option>
+                                                <option value="34">
+                                                    Network Administrator</option>
+                                                <option value="35">
+                                                    Web Developer</option>
+                                                <option value="36">
+                                                    AI Engineer</option>
+                                                <option value="37">
+                                                    Civil Engineer</option>
+                                                <option value="38">
+                                                    Mechanical Engineer</option>
+                                                <option value="39">
+                                                    Electrical Engineer</option>
+                                                <option value="40">
+                                                    Environmental Scientist</option>
+                                                <option value="41">
+                                                    Mechanic</option>
+                                                <option value="42">
+                                                    Carpenter</option>
+                                                <option value="43">
+                                                    Electrician</option>
+                                                <option value="44">
+                                                    Plumber</option>
+                                                <option value="45">
+                                                    Welder</option>
+                                                <option value="46">
+                                                    Machinist</option>
+                                                <option value="47">
+                                                    Construction Worker</option>
+                                                <option value="48">
+                                                    HVAC Technician</option>
+                                                <option value="49">
+                                                    Painter</option>
+                                                <option value="50">
+                                                    Tailor</option>
+                                                <option value="51">
+                                                    Journalist</option>
+                                                <option value="52">
+                                                    Photographer</option>
+                                                <option value="53">
+                                                    Graphic Designer</option>
+                                                <option value="54">
+                                                    Actor</option>
+                                                <option value="55">
+                                                    Musician</option>
+                                                <option value="56">
+                                                    Singer</option>
+                                                <option value="57">
+                                                    Film Director</option>
+                                                <option value="58">
+                                                    Producer</option>
+                                                <option value="59">
+                                                    Editor</option>
+                                                <option value="60">
+                                                    Animator</option>
+                                                <option value="61">
+                                                    Lawyer</option>
+                                                <option value="62">
+                                                    Judge</option>
+                                                <option value="63">
+                                                    Police Officer</option>
+                                                <option value="64">
+                                                    Firefighter</option>
+                                                <option value="65">
+                                                    Soldier</option>
+                                                <option value="66">
+                                                    Politician</option>
+                                                <option value="67">
+                                                    Public Administrator</option>
+                                                <option value="68">
+                                                    Diplomat</option>
+                                                <option value="69">
+                                                    Customs Officer</option>
+                                                <option value="70">
+                                                    Security Guard</option>
+                                                <option value="71">
+                                                    Chef</option>
+                                                <option value="72">
+                                                    Waiter/Waitress</option>
+                                                <option value="73">
+                                                    Hotel Manager</option>
+                                                <option value="74">
+                                                    Flight Attendant</option>
+                                                <option value="75">
+                                                    Travel Agent</option>
+                                                <option value="76">
+                                                    Retail Salesperson</option>
+                                                <option value="77">
+                                                    Cashier</option>
+                                                <option value="78">
+                                                    Cleaner</option>
+                                                <option value="79">
+                                                    Barber</option>
+                                                <option value="80">
+                                                    Beautician</option>
+                                                <option value="81">
+                                                    Farmer</option>
+                                                <option value="82">
+                                                    Fisherman</option>
+                                                <option value="83">
+                                                    Forester</option>
+                                                <option value="84">
+                                                    Agricultural Technician</option>
+                                                <option value="85">
+                                                    Horticulturist</option>
+                                                <option value="86">
+                                                    Zoologist</option>
+                                                <option value="87">
+                                                    Botanist</option>
+                                                <option value="88">
+                                                    Ecologist</option>
+                                                <option value="89">
+                                                    Geologist</option>
+                                                <option value="90">
+                                                    Meteorologist</option>
+                                                <option value="91">
+                                                    Driver</option>
+                                                <option value="92">
+                                                    Truck Driver</option>
+                                                <option value="93">
+                                                    Pilot</option>
+                                                <option value="94">
+                                                    Ship Captain</option>
+                                                <option value="95">
+                                                    Train Operator</option>
+                                                <option value="96">
+                                                    Delivery Driver</option>
+                                                <option value="97">
+                                                    Logistics Coordinator</option>
+                                                <option value="98">
+                                                    Warehouse Worker</option>
+                                                <option value="99">
+                                                    Sailor</option>
+                                                <option value="100">
+                                                    Courier</option>
+                                                <option value="101">
+                                                    Others</option>
+                            <!-- Add other professions -->
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Coupon Value -->
+          <tr data-aos="fade-left" style="display: none;" id="couponValueRow">
+  <td class="tdLayout">
+    <label>Coupon Value</label>
+    <input type="hidden" name="FNames" value="EachCouponValue" class="alignLeft null">
+  </td>
+  <td class="tdLayout">
+    <input type="number" id="couponValue" name="FValues" class="alignLeft" value="500" min="1">
+  </td>
+</tr>
+                <!-- Coupons Amount -->
+              <tr data-aos="fade-right"  id="couponAmountRow">
+  <td class="tdLayout">
+    <label>Coupons Amount</label>
+    <input type="hidden" name="FNames" value="TotalCouponsAmount" class="alignLeft null">
+  </td>
+  <td class="tdLayout">
+    <input type="text" id="totalAmount" name="FValues" class="alignLeft" placeholder="Total amount" readonly>
+  </td>
+</tr>
+
+                <!-- GST -->
+                <tr data-aos="fade-left">
+                    <td class="tdLayout" style="display: none;"  >
+                        <label >GST (If Applicable)</label>
+                        <input type="hidden" name="FNames" value="GSTNo" class="alignLeft null">
+                    </td>
+                    <td class="tdLayout" style="display: none;">
+                        <input type="text" name="FValues" class="alignLeft" placeholder="Enter GST Number">
+                    </td>
+                </tr>
+
+                <!-- Submit Button -->
+                <tr data-aos="zoom-in">
+                    <td class="tdLayout" colspan="2">
+                        <input class="buttonStyle" type="submit" value="Submit">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+<script>
+  function showCouponFields() {
+    document.getElementById("couponValueRow").style.display = "table-row";
+    document.getElementById("noOfCouponsRow").style.display = "table-row";
+    document.getElementById("couponAmountRow").style.display = "table-row";
+  }
+
+  const couponValueInput = document.getElementById("couponValue");
+  const noOfCouponsInput = document.getElementById("noOfCoupons");
+  const totalAmountInput = document.getElementById("totalAmount");
+
+  function updateCouponAmount() {
+    const value = parseInt(couponValueInput.value, 10) || 0;
+    const count = parseInt(noOfCouponsInput.value, 10) || 0;
+    if (count > 99) {
+      alert("Maximum 99 coupons allowed");
+      noOfCouponsInput.value = 99;
+      return;
+    }
+    totalAmountInput.value = value * count;
+  }
+
+  couponValueInput.addEventListener("input", updateCouponAmount);
+  noOfCouponsInput.addEventListener("input", updateCouponAmount);
+</script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+</body>
+</html>
