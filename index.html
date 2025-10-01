@@ -669,20 +669,21 @@ h2 {
                 </tr>
 
 
+
                 <tr data-aos="fade-left">
     <td class="tdLayout">
         <label>Whatsapp Mobile</label>
+        <!-- Field name to identify on server -->
         <input type="hidden" name="FNames" value="sPhone" class="alignLeft null">
     </td>
     <td class="tdLayout mobileContainer">
+        <!-- Country Code Dropdown -->
         <div class="dropdown countryCodeDropdown" style="display:inline-block; width:25%;">
-            <!-- Country Code Button -->
             <button class="btn dropdown-toggle" type="button" id="ddbutton2" data-bs-toggle="dropdown" aria-expanded="false">
                 +91
             </button>
-            <!-- Country Code List -->
-             <ul class="dropdown-menu" aria-labelledby="ddbutton2">
-                                <li><a class="dropdown-item" href="#" dvalue="+93">Afghanistan(+93)</a></li>
+            <ul class="dropdown-menu" aria-labelledby="ddbutton2">
+                 <li><a class="dropdown-item" href="#" dvalue="+93">Afghanistan(+93)</a></li>
                                 <li><a class="dropdown-item" href="#" dvalue="+355">Albania(+355)</a></li>
                                 <li><a class="dropdown-item" href="#" dvalue="+213">Algeria(+213)</a></li>
                                 <li><a class="dropdown-item" href="#" dvalue="+1684">American Samoa(+1684)</a></li>
@@ -912,13 +913,24 @@ h2 {
 
 
                                 <!-- Add more countries as needed -->
-                            </ul>
+            </ul>
         </div>
 
-        <!-- User Input Field (Correctly named for submission) -->
-        <input type="text" name="FValues" spellcheck="true" autocorrect="on" class="alignLeft longInput" placeholder="Enter Whatsapp number" required>
+        <!-- Input for phone number -->
+        <input type="text"
+               id="whatsappInput"
+               class="alignLeft longInput"
+               placeholder="Enter Whatsapp number"
+               onkeyup="updateFullPhone();"
+               required>
+
+        <!-- Hidden field to send combined value -->
+        <input type="hidden" name="FValues" id="fullPhoneHidden">
     </td>
 </tr>
+
+
+  
 
         
                 <!-- Email -->
