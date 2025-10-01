@@ -623,6 +623,7 @@ label {
 </div>
 
 
+
 <form name="frmLeadInfo" id="frmLeadInfo" onsubmit="return onClkValidateLeadInfo();" action="https://sriyangroup.centrahubcrm.com/in/streamline/module/webForm!saveWebForm.do" method="post">
  
     <input type="hidden" name="requestedSession" id="requestedSession" value="BC24B809885B944CBA4F2793BCC6E60F" class="alignLeft null">
@@ -667,17 +668,20 @@ h2 {
                     </td>
                 </tr>
 
-                <!-- Whatsapp Mobile -->
-                <tr data-aos="fade-left">
-                    <td class="tdLayout">
-                        <label>Whatsapp Mobile</label>
-                        <input type="hidden" name="FNames" value="sPhone" class="alignLeft null">
-                    </td>
-                    <td class="tdLayout mobileContainer">
-                        <div class="countryCodeDropdown">
-                           <button class="btn dropdown-toggle" type="button" id="ddbutton2" data-bs-toggle="dropdown">+91</button>
 
-                            <ul class="dropdown-menu" aria-labelledby="ddbutton2">
+                <tr data-aos="fade-left">
+    <td class="tdLayout">
+        <label>Whatsapp Mobile</label>
+        <input type="hidden" name="FNames" value="sPhone" class="alignLeft null">
+    </td>
+    <td class="tdLayout mobileContainer">
+        <div class="dropdown countryCodeDropdown" style="display:inline-block; width:25%;">
+            <!-- Country Code Button -->
+            <button class="btn dropdown-toggle" type="button" id="ddbutton2" data-bs-toggle="dropdown" aria-expanded="false">
+                +91
+            </button>
+            <!-- Country Code List -->
+             <ul class="dropdown-menu" aria-labelledby="ddbutton2">
                                 <li><a class="dropdown-item" href="#" dvalue="+93">Afghanistan(+93)</a></li>
                                 <li><a class="dropdown-item" href="#" dvalue="+355">Albania(+355)</a></li>
                                 <li><a class="dropdown-item" href="#" dvalue="+213">Algeria(+213)</a></li>
@@ -909,13 +913,14 @@ h2 {
 
                                 <!-- Add more countries as needed -->
                             </ul>
-                        </div>
-                      <input type="text" spellcheck="true" autocorrect="on" onkeyup="checkInput(this,2,true,event);" class="alignLeft longInput" placeholder="Enter mobile number" name="mobileNumber" required>
-<input type="hidden" name="FValues" class="alignLeft null">
+        </div>
 
-                    </td>
-                </tr>
+        <!-- User Input Field (Correctly named for submission) -->
+        <input type="text" name="FValues" spellcheck="true" autocorrect="on" class="alignLeft longInput" placeholder="Enter Whatsapp number" required>
+    </td>
+</tr>
 
+        
                 <!-- Email -->
                 <tr data-aos="fade-right">
                     <td class="tdLayout">
